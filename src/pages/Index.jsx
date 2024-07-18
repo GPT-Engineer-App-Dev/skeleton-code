@@ -1,43 +1,20 @@
-import { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import React from 'react';
 
 const Index = () => {
-  const [inputValue, setInputValue] = useState('');
-
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Submitted:', inputValue);
-    setInputValue('');
-  };
-
   return (
-    <div className="min-h-screen flex flex-col">
-      <header className="bg-gray-800 text-white p-4">
-        <h1 className="text-2xl font-bold">My App</h1>
-      </header>
-
-      <main className="flex-grow container mx-auto px-4 py-8">
-        <h2 className="text-3xl font-semibold mb-4">Welcome to My App</h2>
-        <p className="mb-4">This is a bare-bones application that you can modify and build upon.</p>
-
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <Input
-            type="text"
-            placeholder="Enter something..."
-            value={inputValue}
-            onChange={handleInputChange}
-          />
-          <Button type="submit">Submit</Button>
-        </form>
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-grow">
+        <div className="text-center py-10">
+          <h1 className="text-3xl font-bold mb-4">Your Blank Canvas</h1>
+          <p className="text-lg">Chat with the agent to start making edits.</p>
+        </div>
       </main>
-
-      <footer className="bg-gray-200 p-4 text-center">
-        <p>&copy; 2023 My App. All rights reserved.</p>
+      <footer className="bg-gray-100 py-4">
+        <div className="container mx-auto text-center">
+          <p className="text-sm text-gray-600">
+            © {new Date().getFullYear()} Your Company Name. All rights reserved.
+          </p>
+        </div>
       </footer>
     </div>
   );
